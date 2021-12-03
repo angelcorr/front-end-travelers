@@ -6,7 +6,7 @@ import { Fotos, Comentario, User } from '../../interfaces/interface';
 @Component({
   selector: 'app-foto',
   templateUrl: './foto.component.html',
-  styles: []
+  styleUrls: ['./foto.component.css']
 })
 export class FotoComponent implements OnInit {
 

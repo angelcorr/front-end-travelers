@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+
+.custom-image,
+.custom-description-card {
+  flex-direction: column;
+}
+
+.custom-posts,
+.custom-card-description {
+  margin-bottom: 10px;
+}
+
+.custom-avatar {
+  margin-bottom: 10px;
+}
+
+.custom-description {
+  justify-content: center;
+  align-items: center;
+}
+
+h3,
+p,
+h5,
+label,
+button,
+.custom-anchor {
+  font-family: 'Lato', sans-serif;
+  color: #245501 !important;
+}
+
+.custom-button {
+  margin: 5px 5px 5px 5px;
+}
+
+@media (min-width: 320px) and (max-width: 481px) {
+  .custom-image,
+  .custom-description {
+    align-items: center;
+    justify-content: center;
+  }
+
+  .custom-description {
+    flex-direction: column;
+  }
+
+}

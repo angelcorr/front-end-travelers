@@ -1,15 +1,14 @@
 <div class="contaner mt-4">
   <div class="row justify-content-center">
     <div class="col-md-5">
-      <div class="card sombra">
-        <div class="card-header bg-success text-white text-center">
-          <h3>Registrar</h3>
-        </div>
-
-        <div class="card-body bg-dark text-white">
+      <div class="card shadow">
+        <div class="card-body">
+          <div class="text-center">
+            <h3>Sign Up</h3>  
+          </div>
           <form (ngSubmit)="registrarUser()" #formRegistro="ngForm">
             <div class="form-group">
-              <label for="Nombre">Nombre</label>
+              <label for="Nombre">Name</label>
 
               <input type="text" 
               name="name" 
@@ -20,12 +19,12 @@
               required>
 
               <div *ngIf="nombre.invalid && nombre.touched" class="alerta">
-                Debes completar el nombre.
+                You should insert a name.
               </div>
             </div>
 
             <div class="form-group">
-              <label for="Apellido">Apellido</label>
+              <label for="Apellido">Last Name</label>
               <input type="text" 
               name="surname" 
               [(ngModel)]="user.surname" 
@@ -35,12 +34,12 @@
               required>
 
               <div *ngIf="apellido.invalid && apellido.touched" class="alerta">
-                Debes completar el apellido.
+                You should insert a last name.
               </div>
             </div>
 
             <div class="form-group">
-              <label for="Nombre">Mail</label>
+              <label for="Nombre">Email</label>
               <input type="email" 
               name="mail" 
               [(ngModel)]="user.mail" 
@@ -50,7 +49,7 @@
               required>
 
               <div *ngIf="mail.invalid && mail.touched" class="alerta">
-                Debes completar el mail.
+                You should insert an email.
               </div>
             </div>
 
@@ -69,7 +68,7 @@
               </div>
             </div>
 
-            <button type="submit" class="btn btn-success" [disabled]="formRegistro.invalid">Registrar</button>
+            <button type="submit" class="btn shadow custom-button" [disabled]="formRegistro.invalid">Submit</button>
           </form>
         </div>
       </div>

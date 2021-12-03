@@ -7,7 +7,7 @@ import { ActivatedRoute, Router, ChildActivationEnd } from '@angular/router';
 @Component({
   selector: 'app-perfil',
   templateUrl: './perfil.component.html',
-  styles: []
+  styleUrls: ['./perfil.component.css']
 })
 export class PerfilComponent implements OnInit {
 
@@ -30,8 +30,7 @@ export class PerfilComponent implements OnInit {
   };
 
   idUserAuth;
-  fotosTop5Views: Fotos[] = [];
-  fotosPopulares: Fotos[] = [];
+  fotos: Fotos[] = [];
 
   password = {
     CurrentPassword: '',
@@ -70,7 +69,6 @@ export class PerfilComponent implements OnInit {
   ngOnInit() {
     setTimeout(() => {
       this.getTop5Views();
-      this.getPopulares();
       this.loading = false;
       this.idUserAuth = localStorage.getItem('UserId');
     }, 1000);
@@ -78,19 +76,13 @@ export class PerfilComponent implements OnInit {
 
   getTop5Views() {
     this.redSocial.getFotosTop5ViewsUser(this.user._id).subscribe((res: Fotos[]) => {
-      this.fotosTop5Views.push(...res);
-    });
-  }
-
-  getPopulares() {
-    this.redSocial.getFotosPopularesUser(this.user._id).subscribe((res: Fotos[]) => {
-      this.fotosPopulares.push(...res);
+      this.fotos.push(...res);
     });
   }
 
   updatePassword() {
     this.auth.updatePassword(this.password).subscribe(res => {
-      console.log(res);
+      console.log('Esta es la respuestaaaaa:', res);
       this.password = {
         CurrentPassword: '',
         newPassword: ''

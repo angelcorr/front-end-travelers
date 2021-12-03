@@ -2,11 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { RedSocialService } from 'src/app/services/red-social.service';
 import { Album, Fotos } from 'src/app/interfaces/interface';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-album',
   templateUrl: './album.component.html',
-  styles: []
+  styleUrls: ['./album.component.css']
 })
 export class AlbumComponent implements OnInit {
 
@@ -34,7 +36,7 @@ export class AlbumComponent implements OnInit {
   fotoSelecionada: ArrayBuffer | String;
 
 
-  constructor(private redSocial: RedSocialService, private activatedRoute: ActivatedRoute) {
+  constructor(private redSocial: RedSocialService, private activatedRoute: ActivatedRoute, private router: Router) {
     activatedRoute.params.subscribe(params => {
       this.foto.albumId = params['id'];
       redSocial.getAlbum(params['id']).subscribe((res: Album) => {
@@ -66,6 +68,19 @@ export class AlbumComponent implements OnInit {
     this.redSocial.subirFoto(this.foto).subscribe((res: Fotos) => {
       this.fotos.push(res);
     });
+  }
+
+  verFoto(id: string) {
+    this.router.navigate(['foto', id]);
+  }
+
+  deleteFoto(id: string) {
+    if (confirm('Estas seguro de que quieres borrar')) {
+      return this.redSocial.deleteFoto(id).subscribe(res => {
+        this.fotos = this.fotos.filter(foto => foto._id !== res._id);
+      });
+
+    }
   }
 
 }

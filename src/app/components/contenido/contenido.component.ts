@@ -12,7 +12,7 @@ export class ContenidoComponent implements OnInit {
 
   fotos: Fotos[] = [];
 
-  loading = true;
+  loading = false;
 
   constructor(private router: Router, private redSocial: RedSocialService) {
   }
@@ -25,7 +25,5 @@ export class ContenidoComponent implements OnInit {
       console.log(err);
     });
   }
-
-
 
 }

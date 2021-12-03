@@ -6,7 +6,7 @@ import { AuthService } from 'src/app/services/auth.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styles: []
+  styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
 
@@ -23,26 +23,31 @@ export class LoginComponent implements OnInit {
   mensajeError = '';
 
   constructor(private auth: AuthService, private router: Router) { }
-
+  
   ngOnInit() {
   }
-
+  
+  
   login() {
+    
     this.auth.loginUser(this.user).subscribe(res => {
-      console.log(res);
-      localStorage.setItem('token', res['token']);
+      localStorage.setItem('token', res['accessToken']);
+
       localStorage.setItem('Nombre', res['user'].name);
+
       localStorage.setItem('Apellido', res['user'].surname);
+
       localStorage.setItem('UserId', res['user']._id);
-      // this.redSocial.actualizarAuth(res['auth']);
+
+      localStorage.setItem('Correo', res['user'].mail);
       this.router.navigate(['contenido']);
     }, err => {
-      if (err.error.massaje === 'password incorrect') {
+      if (err.error.massaje === 'Contraseña incorrecta') {
         this.errorPassword = true;
         this.mensajeError = 'password incorrecto.';
-      } else if (err.error.massaje === 'user no found') {
+      } else if (err.error.massaje === 'Usuario no encontrado') {
         this.errorPassword = true;
-        this.mensajeError = 'usuario no encontrado, el main que colocó no se encuentra registrado.';
+        this.mensajeError = 'usuario no encontrado, el correo que colocó no se encuentra registrado.';
       }
     });
   }

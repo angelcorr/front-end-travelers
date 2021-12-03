@@ -7,12 +7,12 @@ import { routerNgProbeToken } from '@angular/router/src/router_module';
 @Component({
   selector: 'app-favoritas',
   templateUrl: './favoritas.component.html',
-  styles: []
+  styleUrls: ['./favoritas.component.css']
 })
 export class FavoritasComponent implements OnInit {
 
   fotos: Fotos[] = [];
-  loading = true;
+  loading = false;
 
   constructor(private redSocial: RedSocialService, private router: Router) {
     this.redSocial.getImagenesLikes().subscribe((res: Fotos[]) => {

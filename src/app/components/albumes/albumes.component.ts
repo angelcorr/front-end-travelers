@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-albumes',
   templateUrl: './albumes.component.html',
-  styles: []
+  styleUrls: ['./albumes.component.css']
 })
 export class AlbumesComponent implements OnInit {
 
@@ -18,7 +18,7 @@ export class AlbumesComponent implements OnInit {
     user_id: ''
   };
 
-  loading = true;
+  loading = false;
 
   constructor(private redSocial: RedSocialService, private router: Router) {
     redSocial.getAlbumes().subscribe((res: Album[]) => {

@@ -1,33 +1,33 @@
 <div class="row justify-content-center">
   <div class="col-md-6">
-    <div class="card bg-dark text-white">
+    <div class="card shadow">
       <img [src]="foto.ruta" class="card-img-top" alt="">
     
       <div class="card-body">
         <form (ngSubmit)="actualizarFoto()" #form="ngForm">
           <div class="form-group">
-            <label for="">Nombre</label>
-            <input type="text" class="form-control" name="nombre" [value]="foto.nombre" [(ngModel)]="foto.nombre" required>
+            <label for="nombre">Nombre</label>
+            <input type="text" class="form-control" name="nombre" id="nombre" [value]="foto.nombre" [(ngModel)]="foto.nombre" required>
           </div>
     
           <div class="form-group">
-              <label for="">Album</label>
-              <select name="albumId" id="" class="form-control" [(ngModel)]="foto.albumId">
+              <label for="albums">Album</label>
+              <select name="albumId" id="albums" class="form-control" [(ngModel)]="foto.albumId">
                 <option [value]="album._id" *ngFor="let album of albumes">{{album.nombre}}</option>
               </select>
           </div>
 
           <div class="form-check form-check-inline">
-            <input type="checkbox" name="publico" id="" class="form-check-input" [(ngModel)]="foto.publico">
-            <label for="" class="form-check-label">Público</label>
+            <input type="checkbox" name="publico" id="publico" class="form-check-input" [(ngModel)]="foto.publico">
+            <label for="publico" class="form-check-label">Público</label>
           </div>
     
           <div class="form-group">
-            <label for="">Descripcion</label>
-            <textarea name="descripcion" id="" cols="30" rows="10" class="form-control" [(ngModel)]="foto.descripcion">{{foto.descripcion}}</textarea>
+            <label for="descripcion">Descripcion</label>
+            <textarea name="descripcion" id="descripcion" cols="30" rows="10" class="form-control" [(ngModel)]="foto.descripcion">{{foto.descripcion}}</textarea>
           </div>
     
-          <button type="submit" class="btn btn-primary" [disabled]="form.invalid"><i class="fa fa-save"></i> Guardar Cambios</button>
+          <button type="submit" class="btn shadow" [disabled]="form.invalid"><i class="fa fa-save"></i> Guardar Cambios</button>
         </form>
       </div>
     </div>

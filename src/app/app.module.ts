@@ -24,6 +24,8 @@ import { Tarjeta2Component } from './components/tarjeta2/tarjeta2.component';
 import { PanelSegidoresComponent } from './components/panel-segidores/panel-segidores.component';
 import { AlbumEditComponent } from './components/album-edit/album-edit.component';
 import { SearchComponent } from './components/search/search.component';
+import { PerfilSitioTuristicoComponent } from './components/perfil-sitio-turistico/perfil-sitio-turistico.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,15 +45,19 @@ import { SearchComponent } from './components/search/search.component';
     Tarjeta2Component,
     PanelSegidoresComponent,
     AlbumEditComponent,
-    SearchComponent
+    SearchComponent,
+    PerfilSitioTuristicoComponent
   ],
+  
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule
   ],
+  
   providers: [AuthGuard],
+  
   bootstrap: [AppComponent]
 })
 export class AppModule { }

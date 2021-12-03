@@ -6,14 +6,15 @@
   <div class="row justify-content-center">
     <div class="col-md-5">
       <div class="card sombra">
-        <div class="card-header bg-success text-white text-center">
-          <h3>Iniciar Sesión</h3>
-        </div>
 
-        <div class="card-body bg-dark text-white">
+        <div class="card-body">
+          <div class="text-center">
+            <h3>Log In</h3>
+          </div>
+
           <form (ngSubmit)="login(loginForm, mail)" #loginForm="ngForm">
             <div class="form-group">
-              <label for="Nombre">Mail</label>
+              <label for="Nombre">Email</label>
 
               <input type="email" 
               name="mail" 
@@ -25,11 +26,11 @@
               required>
 
               <div *ngIf="mail.invalid && mail.touched" class="alerta">
-                Debes completar el mail.
+                You must include your email.
               </div>
 
               <div *ngIf="mail.errors?.pattern" class="alerta">
-                el mail no poseo un formato valido
+                Invalid email.
               </div>
             </div>
 
@@ -45,11 +46,11 @@
               required>
 
               <div *ngIf="password.invalid && password.touched" class="alerta">
-                Debes completar el password.
+                You must include your password.
               </div>
             </div>
 
-            <button type="submit" class="btn btn-success" [disabled]="loginForm.invalid">Iniciar Sesión</button>
+            <button type="submit" class="btn shadow custom-button" [disabled]="loginForm.invalid">Iniciar Sesión</button>
           </form>
         </div>
       </div>

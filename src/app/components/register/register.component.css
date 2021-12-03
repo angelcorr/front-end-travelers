@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+
+h3 {
+  font-family: 'Abril Fatface', cursive;
+  color: #245501;
+}
+
+label,
+.custom-button {
+  font-family: 'Lato', sans-serif;
+  color: #245501;
+}

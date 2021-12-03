@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+ 
+h5,
+p {
+  font-family: 'Lato', sans-serif;
+  color: #245501;
+}
+
+.custom-cards {
+  margin: 10px 10px;
+}

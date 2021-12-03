@@ -18,6 +18,5 @@ $(document).ready(function() {
 
   $('.fancybox').fancybox();
 
-  console.log('hola');
 });
 

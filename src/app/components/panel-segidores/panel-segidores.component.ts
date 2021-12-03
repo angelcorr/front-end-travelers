@@ -6,7 +6,7 @@ import { User } from 'src/app/interfaces/interface';
 @Component({
   selector: 'app-panel-segidores',
   templateUrl: './panel-segidores.component.html',
-  styles: []
+  styleUrls: ['./panel-seguidores.component.css']
 })
 export class PanelSegidoresComponent implements OnInit {
 
@@ -17,12 +17,10 @@ export class PanelSegidoresComponent implements OnInit {
 
   constructor(private redSocial: RedSocialService, private activatedRouter: ActivatedRoute) { 
     redSocial.getSeguidores().subscribe((res: User[]) => {
-      console.log(res);
       this.usersSeguidores.push(...res);
     });
 
     redSocial.getSiguiendo().subscribe((res: User[]) => {
-      console.log(res);
       this.usersSiguiendo.push(...res);
     });
   }

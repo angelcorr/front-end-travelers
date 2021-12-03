@@ -1,18 +1,44 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Fotos } from 'src/app/interfaces/interface';
+import { User, Fotos } from 'src/app/interfaces/interface';
 import { RedSocialService } from 'src/app/services/red-social.service';
-import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-tarjetas',
   templateUrl: './tarjetas.component.html',
-  styles: []
+  styleUrls: ['./tarjetas.component.css']
 })
 export class TarjetasComponent implements OnInit {
 
+  user: User = {
+    _id: '',
+    name: '',
+    surname: '',
+    password: '',
+    mail: '',
+    seguidores: 0
+  };
+
   @Input() fotos: Fotos[];
 
-  constructor(private redSocial: RedSocialService, private router: Router) { }
+  constructor(private redSocial: RedSocialService,
+     private auth: AuthService, private activatedRouter: ActivatedRoute, private router: Router) { 
+      activatedRouter.params.subscribe(params => {
+        if (params['id']) {
+          redSocial.getUser(params['id']).subscribe((res: User) => {
+            this.user = res;
+            console.log(res);
+          });
+  
+        } else {
+          redSocial.getThisUser().subscribe((res: User) => {
+            this.user = res;
+            console.log(res);
+           });
+        }
+      })
+    };
 
   ngOnInit() {
   }

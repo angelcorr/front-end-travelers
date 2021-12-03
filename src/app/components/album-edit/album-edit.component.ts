@@ -6,7 +6,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-album-edit',
   templateUrl: './album-edit.component.html',
-  styles: []
+  styleUrls: ['./album-edit.component.css']
 })
 export class AlbumEditComponent implements OnInit {
 

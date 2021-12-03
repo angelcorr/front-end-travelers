@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+
+h2,
+h5,
+p,
+textarea,
+.custom-comment {
+  font-family: 'Lato', sans-serif;
+  color: #245501;
+}

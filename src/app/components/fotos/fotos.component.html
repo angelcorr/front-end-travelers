@@ -1,23 +1,24 @@
 <div class="row">
-  <button class="btn btn-primary sombra" data-toggle="modal" data-target="#exampleModal">Subir Foto</button>
+  <button class="btn sombra custom-button" data-toggle="modal" data-target="#exampleModal">Subir Foto</button>
 </div>
 
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
-    <div class="modal-content text-white">
-      <div class="modal-header bg-success">
+    <div class="modal-content">
+      <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Subir nueva foto</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <form #formFotos="ngForm">
-        <div class="modal-body bg-dark">
+        <div class="modal-body">
           <div class="form-group">
-            <label for="">Nombre</label>
+            <label for="name">Nombre</label>
             <input 
             type="text" 
             class="form-control"
+            id="name"
             name="nombre"
             #nombre="ngModel"
             [(ngModel)]="fot.nombre"
@@ -30,8 +31,8 @@
           </div>
 
           <div class="form-group">
-            <label for="">Album</label>
-            <Select class="form-control" name="albumId" #album>
+            <label for="album">Album</label>
+            <Select class="form-control" name="albumId" id="album" #album>
               <option [value]="album._id" *ngFor="let album of albumes">{{album.nombre}}</option>
             </Select>
           </div>
@@ -52,13 +53,13 @@
           </div>
           
           <div class="form-group">
-            <input type="file" name="image" class="d-none" (change)="onChange($event)" #fotoInput>
+            <input type="file" name="image" class="d-none custom-input" (change)="onChange($event)" #fotoInput>
             <img [src]="fotoSelecionada || 'assets/image/no-image.png'" alt="" class="card-img-top" height="400px" (click)="fotoInput.click()">
           </div>
         </div>
-        <div class="modal-footer bg-dark">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-times-circle"></i> Cerrar</button>
-          <button type="submit" class="btn btn-primary" data-dismiss="modal" (click)="subirFoto(album.value)">Subir</button>
+        <div class="modal-footer">
+          <button type="button" class="btn shadow" data-dismiss="modal">Cerrar</button>
+          <button type="submit" class="btn shadow" data-dismiss="modal" (click)="subirFoto(album.value)">Subir</button>
         </div>
 
       </form>
@@ -68,7 +69,7 @@
 
 <div class="row" *ngIf="loading">
   <div class="col">
-    <div class="d-flex justify-content-center align-items-center">
+    <div class="d-flex justify-content-center align-items-center custom-display">
       <i class="fa fa-5x fa-spin fa-spinner"></i>
 
     </div>

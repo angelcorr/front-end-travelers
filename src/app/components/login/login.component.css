@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+
+/* Custom Brand name */
+h3 {
+  font-family: 'Abril Fatface', cursive;
+  font-size: 1.9rem;
+  color: #245501;
+}
+
+/* Custom button */
+
+.custom-button {
+  color: #245501;
+}
+
+label,
+.custom-button {
+  font-family: 'Lato', sans-serif;
+  color: #245501;
+}

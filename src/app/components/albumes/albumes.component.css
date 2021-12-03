@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+
+label,
+button,
+h1,
+h5,
+p {
+  font-family: 'Lato', sans-serif;
+  color: #245501;
+}
+
+label,
+button {
+  font-size: 1.2rem;
+}
+
+h5 {
+  font-size: 1.5rem;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+input,
+select,
+textarea {
+  border: 1px solid #245501;
+}
+
+textarea,
+input {
+  font-family: 'Lato', sans-serif;
+}
+
+@media (min-width: 320px) and (max-width: 481px) {
+  .custom-button {
+    margin-left: 20px;
+  }
+}

@@ -6,7 +6,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-fotos',
   templateUrl: './fotos.component.html',
-  styles: []
+  styleUrls: ['./fotos.component.css']
 })
 export class FotosComponent implements OnInit {
 
@@ -29,7 +29,7 @@ export class FotosComponent implements OnInit {
 
   fotoSelecionada: ArrayBuffer | String;
 
-  loading = true;
+  loading = false;
 
   constructor(private redSocial: RedSocialService, private router: Router, private activatedRoute: ActivatedRoute) {
     redSocial.getAlbumes().subscribe((res: Album[]) => {

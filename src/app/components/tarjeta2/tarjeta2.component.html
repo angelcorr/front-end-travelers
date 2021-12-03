@@ -1,6 +1,13 @@
-<div class="row">
-  <div class="col-md-4 mt-3" *ngFor="let foto of fotos" (click)="mostrarFoto(foto._id)">
+<div class="row d-flex">
+  <div class="col-md-7 custom-display mt-3" *ngFor="let foto of fotos" (click)="mostrarFoto(foto._id)">
     <div class="card sombra" style="cursor: pointer">
+        <!-- <div class="card-body">
+          <h5 class="card-title">
+            <a [routerLink]="['/perfil', user._id]" routerLinkActive="router-link-active">
+              {{user.name}} {{user.surname}}
+            </a>
+          </h5>
+        </div> -->
       <img [src]="foto.ruta" alt="" class="card-img-top">
 
       <div class="card-body">

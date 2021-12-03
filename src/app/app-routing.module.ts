@@ -15,6 +15,7 @@ import { FotosUserComponent } from './components/fotos-user/fotos-user.component
 import { PanelSegidoresComponent } from './components/panel-segidores/panel-segidores.component';
 import { AlbumEditComponent } from './components/album-edit/album-edit.component';
 import { SearchComponent } from './components/search/search.component';
+import { PerfilSitioTuristicoComponent } from './components/perfil-sitio-turistico/perfil-sitio-turistico.component';
 
 const routes: Routes = [
   {path: 'contenido', component: ContenidoComponent, canActivate: [AuthGuard]},
@@ -32,6 +33,7 @@ const routes: Routes = [
   {path: 'fotos/:idUser', component: FotosUserComponent, canActivate: [AuthGuard]},
   {path: 'seguidores', component: PanelSegidoresComponent, canActivate: [AuthGuard]},
   {path: 'search/:termino', component: SearchComponent, canActivate: [AuthGuard]},
+  {path: 'pagina', component: PerfilSitioTuristicoComponent, canActivate: [AuthGuard]},
   {path: '**', pathMatch: 'full', redirectTo: 'contenido'}
 ];
 

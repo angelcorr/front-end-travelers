@@ -7,7 +7,7 @@ import { AuthService } from 'src/app/services/auth.service';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styles: []
+  styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
 
@@ -27,7 +27,7 @@ export class RegisterComponent implements OnInit {
 
   registrarUser() {
     this.auth.registrarUser(this.user).subscribe(res => {
-      localStorage.setItem('token', res['token']);
+      localStorage.setItem('token', res['accessToken']);
       localStorage.setItem('Nombre', res['user'].name);
       localStorage.setItem('Apellido', res['user'].surname);
       localStorage.setItem('UserId', res['user']._id);

@@ -6,7 +6,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-foto-edit',
   templateUrl: './foto-edit.component.html',
-  styles: []
+  styleUrls: ['./foto-edit.component.css']
 })
 export class FotoEditComponent implements OnInit {
 
