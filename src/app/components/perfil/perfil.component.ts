@@ -49,7 +49,6 @@ export class PerfilComponent implements OnInit {
       if (params['id']) {
         redSocial.getUser(params['id']).subscribe((res: User) => {
           this.user = res;
-          console.log(res);
         });
 
         redSocial.verificarSiguiendo(params['id']).subscribe((res: boolean) => {
@@ -82,7 +81,6 @@ export class PerfilComponent implements OnInit {
 
   updatePassword() {
     this.auth.updatePassword(this.password).subscribe(res => {
-      console.log('Esta es la respuestaaaaa:', res);
       this.password = {
         CurrentPassword: '',
         newPassword: ''
@@ -103,9 +101,9 @@ export class PerfilComponent implements OnInit {
 
   updateUser() {
     this.auth.updateUser(this.user._id, this.userModif).subscribe(res => {
-      console.log(res['user'].name);
       localStorage.setItem('Nombre', res['user'].name);
       localStorage.setItem('Apellido', res['user'].surname);
+      localStorage.setItem('Mail', res['user'].mail);
     });
    }
 

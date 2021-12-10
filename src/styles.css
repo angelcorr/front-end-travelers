@@ -7,9 +7,10 @@
 }
 
 body {
-  background: #f1f7ee;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #f1f7ee, #f1f7ee);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #f1f7ee, #f1f7ee); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  padding-top: 70px; 
+  background: #ffffff;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #ffffff, #ffffff);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #ffffff, #ffffff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .alerta {
@@ -22,4 +23,10 @@ body {
   height:200px;
   border-radius:150px;
   border:1px solid #245501;
+}
+
+@media screen and (max-width: 768px) {
+  body { 
+    padding-top: 50px;
+  }
 }

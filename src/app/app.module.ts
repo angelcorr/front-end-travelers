@@ -25,6 +25,7 @@ import { PanelSegidoresComponent } from './components/panel-segidores/panel-segi
 import { AlbumEditComponent } from './components/album-edit/album-edit.component';
 import { SearchComponent } from './components/search/search.component';
 import { PerfilSitioTuristicoComponent } from './components/perfil-sitio-turistico/perfil-sitio-turistico.component';
+// import { PaginaCrearComponent } from './components/pagina-crear/pagina-crear.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { PerfilSitioTuristicoComponent } from './components/perfil-sitio-turisti
     PanelSegidoresComponent,
     AlbumEditComponent,
     SearchComponent,
-    PerfilSitioTuristicoComponent
+    PerfilSitioTuristicoComponent,
+    // PaginaCrearComponent
   ],
   
   imports: [

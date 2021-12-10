@@ -7,4 +7,24 @@
   </div>
 </div>
 
-<app-tarjeta2 [fotos]="fotos"></app-tarjeta2>
+<div class="container d-flex ">
+  <div class="row d-flex">
+    <div class="col-md-7 custom-left-side">
+      <app-tarjeta2 [fotos]="fotos"></app-tarjeta2>
+    </div>
+    <div class="col-md-4 position-fixed custom-position">
+      <div class="card custom-card shadow">
+        <ul class="list-group list-group-flush" href="#" role="button" *ngIf="auth.loggedin()">
+          <li class="list-group-item custom-side-links main-side-bar">Sugerencias para ti</li>
+          <li class="list-group-item custom-side-links">Valle de Cocora</li>
+          <li class="list-group-item custom-side-links">Termales de Santa Rosa</li>
+          <li class="list-group-item custom-side-links">Monserratte</li>
+          <li class="list-group-item custom-side-links">Cartagena</li>
+          <li class="list-group-item custom-side-links">Quibdó</li>
+          <li class="list-group-item custom-side-links">Villavicencio</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+

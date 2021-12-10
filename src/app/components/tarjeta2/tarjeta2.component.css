@@ -3,6 +3,23 @@
 h4,
 h5 {
   font-family: 'Lato', sans-serif;
-  color: #245501;
+  color: #000000;
 }
 
+.custom-card-footer {
+  flex-direction: row;
+  height: 40px;
+}
+
+.custom-heart {
+  margin-left: 10px;
+}
+
+.custom-eye,
+.custom-heart {
+  padding: 10px;
+}
+
+i {
+  color: #000000;
+}

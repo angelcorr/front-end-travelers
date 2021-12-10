@@ -31,7 +31,6 @@ export class RegisterComponent implements OnInit {
       localStorage.setItem('Nombre', res['user'].name);
       localStorage.setItem('Apellido', res['user'].surname);
       localStorage.setItem('UserId', res['user']._id);
-      // this.redSocial.actualizarAuth(res['auth']);
       this.router.navigate(['contenido']);
     });
   }

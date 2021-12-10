@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { User } from '../interfaces/interface';
+import { User, Page } from '../interfaces/interface';
 import { environment } from 'src/environments/environment';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
 @Injectable({
   providedIn: 'root'
 })
+
 export class AuthService {
 
   url = environment.apiUrl;
@@ -27,6 +28,7 @@ export class AuthService {
   registrarUser(user: User) {
     return this.http.post(this.url + 'register', {name: user.name, surname: user.surname, mail: user.mail, password: user.password});
   }
+  
 
   logout() {
     localStorage.removeItem('token');
@@ -48,4 +50,8 @@ export class AuthService {
     {headers: this.header});
   }
 
+  registrarPage(page: Page) {
+    return this.http.post(this.url + 'pagina', {name: page.nombre, mail: page.mail, password: page.password, descripcion: page.description, categoria: page.categoria });
+  }
 }
+

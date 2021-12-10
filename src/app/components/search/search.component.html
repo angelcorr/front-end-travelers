@@ -1,9 +1,11 @@
 <h3>Resultado de la busqueda de "{{termino}}"</h3>
 <hr>
 
-<div class="row" *ngIf="fotos.length == 0 && users.length == 0 && !loading">
+<div class="row" *ngIf="fotos.length === 0 && users.length === 0 && !loading">
   <div class="col">
-    <h1 class="text-center display-4" style="margin-top: 150px;">No se obtuvieron resultados en la busqueda</h1>
+    <h1 class="text-center display-4" style="margin-top: 150px;">
+      No se obtuvieron resultados en la busqueda
+    </h1>
   </div>
 </div>
 

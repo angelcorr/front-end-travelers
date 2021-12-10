@@ -5,17 +5,17 @@
 h3 {
   font-family: 'Abril Fatface', cursive;
   font-size: 1.9rem;
-  color: #000;
+  color: #245501;
 }
 
 /* Custom button */
 
 .custom-button {
-  color: #000;
+  color: #245501;
 }
 
 label,
 .custom-button {
   font-family: 'Lato', sans-serif;
-  color: #000;
+  color: #245501;
 }

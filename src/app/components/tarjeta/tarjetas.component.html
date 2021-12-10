@@ -1,15 +1,12 @@
 <div class="row mt-4">
   <div class="col-lg-10 col-lg-4 custom-cards" *ngFor="let foto of fotos">
     <div class="card sombra">
-      <!-- <div class="card-body">
-        <h5 class="card-title">{{user.name}} {{user.surname}}</h5>
-      </div> -->
       <img [src]="foto.ruta" class="card-img-top" alt="">
       <div class="card-body">
         <h5>{{foto.nombre}}</h5>
         <p>{{foto.descripcion}}</p>
       </div>
-      <div class="card-footer">
+      <div class="card">
         <div class="row justify-content-between">
           <div class="col-8">
               <button class="btn shadow" (click)="verFoto(foto._id)" data-toggle="tooltip" data-placement="top" title="Ver Imagen"><i class="fa fa-eye"></i></button>

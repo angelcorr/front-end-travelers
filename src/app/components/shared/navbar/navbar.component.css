@@ -1,11 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
 
+
+
+.custom-navbar {
+  border-bottom: 1px solid #fff;
+  background-color: #fff;
+}
+
 /* Custom Brand name */
 .custom-brand {
   font-family: 'Abril Fatface', cursive;
-  font-size: 1.9rem;
-  color: #245501;
+  font-size: 1.4rem;
+  margin-left: 50px;
+  color: #000;
+}
+
+.custom-collapse {
+  margin-right: 50px;
 }
 
 .custom-input::placeholder {
@@ -15,16 +27,23 @@
 .custom-anchor a,
 .custom-link {
   font-family: 'Lato', sans-serif;
-  color: #245501 !important;
+  color: #000 !important;
 }
 
-.custom-toggle {
-  color: #245501;
+.custom-anchor a:hover,
+.custom-link:hover,
+.custom-brand:hover {
+  color: #000000e8 !important;
 }
 
-.custom-form input {
-  margin-left: 300px;
+#anchor {
+  color: #000 !important;
 }
+
+.custom-search-icon {
+  color: #000;
+}
+
 
 @media (min-width: 320px) and (max-width: 481px) {
   .custom-form input,

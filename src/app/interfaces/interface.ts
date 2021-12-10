@@ -42,3 +42,13 @@ export interface Comentario {
     imagen_id: string;
     gravatar: string;
 }
+
+export interface Page {
+    _id: string;
+    nombre: string;
+    mail: string;
+    password: string;
+    description: string;
+    categoria: string;
+    seguidores: number;
+}
